@@ -20,6 +20,10 @@ void clienterror(int fd, char *cause, char *errnum, char *shortmsg,
 // doit
 void doit(int fd)
 {
+  int is_static;
+  struct stat sbuf;
+  char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
+  char filename[MAXLINE]; // 8/20 여기까지.
 
   return;
 }
@@ -32,6 +36,7 @@ int main(int argc, char **argv)
   struct sockaddr_storage clientaddr;
 
   /* Check command line args */
+  // 똑같이 파일이름과 포트 번호인가?
   if (argc != 2)
   {
     fprintf(stderr, "usage: %s <port>\n", argv[0]);
